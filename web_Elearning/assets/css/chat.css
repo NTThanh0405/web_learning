@@ -1,0 +1,158 @@
+body {
+    background: url('<?php echo BASE_URL; ?>assets/images/chat_background.png') repeat;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    height: 100vh;
+    padding: 0;
+}
+.chat-container {
+    display: flex;
+    width: 100%;
+}
+.member-list {
+    width: 30%;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    overflow-y: auto;
+}
+.member-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.member-item img.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.member-info .name {
+    font-weight: bold;
+}
+.member-info .email {
+    font-size: 0.9em;
+    color: #666;
+}
+.member-info .owner {
+    font-size: 0.8em;
+    color: #007bff;
+}
+.chat-area {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.chat-header {
+    background: #4a90e2;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chat-header .back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.chat-header .action-buttons {
+    display: flex;
+    gap: 10px;
+}
+.chat-header .action-buttons button {
+    background: none;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+.messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+.message.mine {
+    flex-direction: row-reverse;
+}
+.message-header {
+    display: flex;
+    align-items: center; /* Căn giữa avatar và tên theo chiều dọc */
+}
+.message.mine .message-header {
+    flex-direction: row-reverse; /* Đảo ngược thứ tự avatar và tên cho tin nhắn của mình */
+}
+.message .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+.message .sender {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0 5px; /* Khoảng cách giữa tên và avatar */
+}
+.message.mine .sender {
+    text-align: right;
+}
+.message .content {
+    max-width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    white-space: nowrap !important;
+    word-break: normal;
+}
+.message.mine .content {
+    background: #4a90e2;
+    color: white;
+}
+.message .time {
+    font-size: 0.8em;
+    color: #999;
+}
+.message img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+.message-input {
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+.message-input form {
+    display: flex;
+    align-items: center;
+}
+.message-input .input-group {
+    width: 100%;
+}
+.message-input .form-control {
+    border-radius: 20px;
+}
+.message-input .btn {
+    border-radius: 20px;
+}
+.search-bar {
+    margin-top: 10px;
+}
+.search-results {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    width: 90%;
+    max-height: 200px;
+    overflow-y: auto;
+}

@@ -1,0 +1,191 @@
+/* admin.css */
+body {
+    background-color: #f0f4f8;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.search-bar {
+    width: 300px;
+    margin-right: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.nav-tabs {
+    background-color: #007bff;
+    margin-bottom: 20px;
+}
+
+.nav-tabs .nav-link {
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #fff;
+    color: #007bff;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+}
+
+.stat-item img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.stat-item h3 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.stat-item .fee {
+    color: green;
+}
+
+/* Table Styling for Alignment and Balance */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    font-weight: bold;
+}
+
+.table tbody td {
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+    border: 1px solid #dee2e6;
+}
+
+/* Ensure consistent column widths */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+    width: 25%;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+    width: 30%;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+    width: 20%;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+    width: 25%;
+}
+
+/* Specific adjustments for "Danh sách nhóm học" table */
+#danh-sach-nhom-hoc .table th:nth-child(1),
+#danh-sach-nhom-hoc .table td:nth-child(1) {
+    width: 30%;
+}
+
+#danh-sach-nhom-hoc .table th:nth-child(2),
+#danh-sach-nhom-hoc .table td:nth-child(2) {
+    width: 40%;
+}
+
+#danh-sach-nhom-hoc .table th:nth-child(3),
+#danh-sach-nhom-hoc .table td:nth-child(3) {
+    width: 30%;
+}
+
+/* Specific adjustments for "Danh sách khóa học" table */
+#danh-sach-khoa-hoc .table th:nth-child(1),
+#danh-sach-khoa-hoc .table td:nth-child(1) {
+    width: 25%;
+}
+
+#danh-sach-khoa-hoc .table th:nth-child(2),
+#danh-sach-khoa-hoc .table td:nth-child(2) {
+    width: 35%;
+}
+
+#danh-sach-khoa-hoc .table th:nth-child(3),
+#danh-sach-khoa-hoc .table td:nth-child(3) {
+    width: 20%;
+}
+
+#danh-sach-khoa-hoc .table th:nth-child(4),
+#danh-sach-khoa-hoc .table td:nth-child(4) {
+    width: 20%;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-sm:hover {
+    background-color: #c82333;
+}
