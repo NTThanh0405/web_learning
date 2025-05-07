@@ -1,0 +1,152 @@
+
+body {
+    background-image: url('../images/background.png'); /* Path to the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for the login form */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95); 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header styling */
+.login-header img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.login-header h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form title */
+.login-form h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.form-group .input-group {
+    position: relative;
+}
+
+.form-group .input-group .input-group-append {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-group .input-group .input-group-text {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Checkbox styling */
+.form-check {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-check-label {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Button styling */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Links styling */
+.forgot-password {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.forgot-password a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.forgot-password span {
+    color: #666;
+    margin: 0 5px;
+}
+
+/* Alert styling */
+.alert {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+/* Ensure the form is readable on smaller screens */
+@media (max-width: 480px) {
+    .login-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .login-form h3 {
+        font-size: 1.3em;
+    }
+
+    .form-group input {
+        padding: 8px;
+    }
+}

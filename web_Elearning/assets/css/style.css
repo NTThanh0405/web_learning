@@ -1,0 +1,571 @@
+/* Kiểu cho trang chủ */
+body.dashboard {
+    display: block;
+    height: auto;
+    background: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body.dashboard::before {
+    display: none;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Kiểu cho sidebar */
+.sidebar {
+    width: 260px;
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    margin: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar .logo {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sidebar .logo img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 5px;
+    text-align: left;
+    padding-left: 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #606060;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #f0f4ff;
+    color: #4a86ff;
+    border-left: 3px solid #4a86ff;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar ul li.logout {
+    margin-top: auto;
+}
+
+.sidebar ul li.logout a {
+    color: #ff4a4a;
+}
+
+/* Điều chỉnh main-content */
+.main-content {
+    flex: 1;
+    padding: 0 20px 20px 20px;
+    background-color: #f5f7fb;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 260px;
+    box-sizing: border-box;
+}
+
+/* Điều chỉnh top-bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin: 0 0 30px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+}
+
+/* Điều chỉnh thanh tìm kiếm */
+.top-bar .search-bar {
+    flex: 1;
+    margin: 0 20px;
+    max-width: 100%;
+    position: relative;
+}
+
+.top-bar .search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Search styles */
+.search-bar .search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.search-bar .search-results div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.search-bar .search-results div:hover {
+    background: #f0f0f0;
+}
+
+/* Kiểu cho user-info và thông báo */
+.top-bar .user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.top-bar .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0;
+    object-fit: cover;
+}
+
+.top-bar .user-info .badge {
+    background-color: #eef2ff;
+    color: #4a86ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-left: 0;
+}
+
+/* Notification Bell */
+.top-bar .user-info .notification-bell {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.top-bar .user-info .notification-bell i {
+    font-size: 20px;
+    color: #606060;
+}
+
+.top-bar .user-info .notification-bell .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #ff4a4a;
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 50%;
+    display: none; /* Ẩn khi không có thông báo */
+}
+
+/* Notification Panel */
+.top-bar .user-info .notification-panel {
+    display: none;
+    position: absolute;
+    top: 50px; /* Position just below the bell */
+    right: 0;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1500; /* Ensure it overlays other content */
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.top-bar .user-info .notification-panel .notification-header {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #f8f9fa; /* Light background for the header */
+}
+
+.top-bar .user-info .notification-panel .notification-header h2 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.top-bar .user-info .notification-panel .notification-header small {
+    font-size: 12px;
+    color: #888;
+}
+
+.top-bar .user-info .notification-panel .notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between avatar and text */
+}
+
+.top-bar .user-info .notification-panel .notification-item:hover {
+    background: #f8f9fa;
+}
+
+.top-bar .user-info .notification-panel .notification-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.top-bar .user-info .notification-panel .notification-item .notification-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    flex: 1; /* Ensure the link takes up the remaining space */
+}
+
+.top-bar .user-info .notification-panel .notification-item .notification-link:hover {
+    color: #0066cc;
+}
+
+.top-bar .user-info .notification-panel .notification-title {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    color: #333;
+}
+
+.top-bar .user-info .notification-panel .notification-message {
+    display: block;
+    color: #555;
+    font-size: 11px;
+}
+
+.top-bar .user-info .notification-panel .notification-time {
+    display: block;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Các phần khác giữ nguyên */
+.main-content > .row {
+    margin: 20px;
+}
+
+.joined-groups {
+    margin: 20px;
+    background-color: #f4f5f6;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+}
+
+.joined-groups h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.group-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.group-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.group-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.group-card-body {
+    padding: 15px;
+    flex: 1;
+}
+
+.group-card-body p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.group-card-body .badge {
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Notification Panel */
+.notification-panel {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1500;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.notification-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.notification-item .notification-link {
+    flex-grow: 1;
+}
+.notification-item:hover {
+    background: #f8f9fa;
+}
+.notification-title {
+    display: block;
+    font-weight: bold;
+}
+.notification-message {
+    display: block;
+    color: #555;
+}
+.notification-time {
+    display: block;
+    font-size: 12px;
+    color: #888;
+}
+.notification-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+.notification-link:hover {
+    color: #0066cc;
+}
+.notification-count {
+    display: none; /* Ẩn khi không có thông báo */
+}
+.show-all-notifications {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    color: #0066cc;
+}
+.show-all-notifications:hover {
+    background: #f8f9fa;
+}
+/* Search styles */
+.search-bar {
+    position: relative;
+}
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+.search-results div {
+    padding: 8px;
+    cursor: pointer;
+}
+.search-results div:hover {
+    background: #f0f0f0;
+}
+/* Forum styles (đồng bộ với forums/create.php) */
+.post-container { 
+    display: flex; 
+    background-color: #e6f3ff; 
+    border-radius: 10px; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+}
+.post-avatar { 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 10px; 
+    margin-right: 15px; 
+}
+.post-content { 
+    flex-grow: 1; 
+}
+.post-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.post-header .badge { 
+    background-color: #d1e7ff; 
+    color: #000; 
+    font-size: 14px; 
+}
+.post-title { 
+    font-size: 18px; 
+    font-weight: bold; 
+    margin: 5px 0; 
+}
+.post-image-link { 
+    color: #0066cc; 
+    text-decoration: none; 
+}
+.post-description { 
+    margin: 5px 0; 
+}
+.post-actions { 
+    display: flex; 
+    gap: 10px; 
+    margin-top: 10px; 
+    align-items: center; 
+}
+.post-actions i { 
+    color: #0066cc; 
+    cursor: pointer; 
+}
+.create-post-btn { 
+    background-color: #0066cc; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 20px; 
+    float: right; 
+}
+.create-post-btn:hover { 
+    background-color: #005bb5; 
+}
+.delete-post-btn { 
+    background-color: #dc3545; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    font-size: 14px; 
+}
+.delete-post-btn:hover { 
+    background-color: #c82333; 
+}
+.comments { 
+    display: none; 
+}
+.child-comments { 
+    border-left: 2px solid #e0e0e0; 
+    padding-left: 10px; 
+    display: none; 
+}
+.reply-comment, .show-child-comments, .show-all-comments { 
+    color: #0066cc; 
+    font-size: 14px; 
+    text-decoration: none; 
+    margin-right: 10px; 
+}
+.reply-comment:hover, .show-child-comments:hover, .show-all-comments:hover { 
+    text-decoration: underline; 
+}
+.comment-form .replying-to { 
+    font-style: italic; 
+    color: #555; 
+    margin-bottom: 5px; 
+    display: none; 
+}
+.cancel-reply { 
+    color: #dc3545; 
+    font-size: 14px; 
+    text-decoration: none; 
+    margin-left: 10px; 
+}
+.cancel-reply:hover { 
+    text-decoration: underline; 
+}
+/* Group notification styles */
+.group-notifications .group-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.group-notifications .group-card img {
+    margin-right: 10px;
+}
+.group-notifications .group-card-body p {
+    margin: 0;
+    font-size: 14px;
+}
+.group-notifications .group-card-body small {
+    font-size: 12px;
+}

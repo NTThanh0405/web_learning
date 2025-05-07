@@ -1,0 +1,29 @@
+        /* Custom scrollbar for members list */
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: #a0aec0;
+            border-radius: 3px;
+        }
+        /* Ensure search results are styled similarly */
+        .search-results {
+            position: absolute;
+            background: white;
+            border: 1px solid #e2e8f0;
+            width: 90%;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 20;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .search-results div {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .search-results div:hover {
+            background-color: #f7fafc;
+        }
